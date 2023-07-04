@@ -1,0 +1,174 @@
+#+title: Yomibaba
+
+* Background
+
+This is a temporary fork of Yomichan with just one additional, but very useful,
+feature.
+
+The feature added supports exporting and importing the entire IndexedDB
+database of dictionaries that have been imported by Yomichan. This lets you
+track only one file (or two, if you want to copy the same settings too) when
+you want to migrate between browsers and devices, or indeed when you just want
+to share your settings with newer people without giving them a mountain of
+drudgery to tackle first. Backups also become more manageable. It is also
+significantly faster to load all the data this way since it avoids all the
+parsing and validation that Yomichan typically does. Of course, that means the
+data could be invalid too but I haven't run into problems yet after importing
+database that was actually properly exported.
+
+I have renamed user-facing references to =Yomibaba= to respect the wishes of
+the developer of Yomichan to sunset the Yomichan name but I didn't go the whole
+mile of renaming all the inner files and such because this is intended to be a
+stop-gap single release. See [[https://github.com/themoeway/yomitan/][Yomitan]] for an actual longer-term project that
+follows in the spirit of Yomichan.
+
+Yomitan project wishes to have a public release only after some major kinks
+have been ironed out but I think importing and exporting database is a useful
+enough feature to release something just for it hence why this exists.
+
+While I was working on this, a stupidly annoying audio bug also popped up with
+Firefox and a fix is included in this release FWIW. Credits to
+[[https://github.com/themoeway/yomitan/pull/186/commits/1ad09c47fbda0bf6182dc06315ab1030cc66c0ad][Aquafina-water-bottle]] for the fix.
+
+See [[https://github.com/FooSoft/yomichan#readme][Yomichan REAMDE]] for the documentation about everything yomichan other than
+this new feature. Also present in this repository as [[file:Yomichan_README.md][Yomichan_README.md]].
+
+* Installation
+
+** Firefox
+
+Download [[https://github.com/forsakeninfinity/yomibaba/releases/download/22.11.3.3/yomibaba-firefox-signed-22.11.3.3.xpi][yomibaba-firefox-signed-22.11.3.3.xpi]] and drag it onto your Firefox window, or
+just double click it.
+
+** Chrome
+
++ Download [[https://github.com/forsakeninfinity/yomibaba/releases/download/22.11.3.3/yomibaba-chrome.zip][yomibaba-chrome.zip]] and unzip it somewhere
++ Go to chrome://extensions/ and turn on developer mode from the top right
++ Click =Load unpacked= and select the unzipped folder
+
+* Usage
+
+** Exporting the dictionary database from Yomichan
+
+Existing Yomichan extension installations don't have the code that lets you
+export the database. Which means that we have no choice but to inject and run
+the code on top of the extension somehow. I have instructions on how to do that
+in this repository:
+https://github.com/forsakeninfinity/yomichan-data-exporter#steps-to-export-the-data
+
+** Importing the dictionary database
+
+- Go to Yomibaba's settings page (Click on the extension's icon then click on
+  the cog icon from the popup).
+- Click =Import Dictionary Data= and select the database file you want to import
+- Wait for the import to finish then turn all the dictionaries back on from the
+  =Dictionaries > Configure installed and enabled dictionaries= section
+- Refresh the browser tab to see the dictionaries in effect
+- Restart the browser if you keep running into issues
+
+** Exporting the database from Yomibaba
+
+- Just click =Export Dictionary Data= from the backup section of Yomibaba's settings page
+- It will show you a progress report as it exports the data then initiates a
+  download for a file named something like
+  =yomibaba-dictionaries-YYYY-MM-DD-HH-mm-ss.json=
+  (e.g. =yomibaba-dictionaries-2023-07-05-02-42-04.json=)
+
+** Consider compressing the data for sharing and archival
+
+Note that the exported file is going to be rather large (likely a few
+gigabytes, depending on the size of your collection). You should consider
+compressing it if you are sharing (or archiving) the data over the
+internet. For example, I get 10x+ compression without loss for [[* Brand new users][the beginner
+database I share further below]] which could matter a lot for people with slow
+(or bandwidth-limited) internet.
+
+You can run the following command on a POSIX shell (if you are on windows, I
+strongly recommend installing [[https://git-scm.com/download/win][git bash]] just to get one), to compress the file
+that was exported. Replace the filename with the appropriate name that was
+generated and downloaded and run the command from the same folder where the
+file was downloaded to.
+#+begin_src sh
+exported_filename="yomibaba-dictionaries-beginners-2023-07-08-05-28-08.json"; XZ_OPT="-9e -T0" tar -Jcvf "${exported_filename%.json}.tar.xz" "$exported_filename"
+#+end_src
+
+This will take a fair bit of time as it is trying to compress the file to the
+maximum possible level. Drop the =XZ_OPT= bits from the command if you'd rather
+have it compress faster even if the resulting size is larger.
+
+You can also use [[https://www.7-zip.org/][7-zip]] with =Ultra= compression level and =LZMA2= compression
+level to compress the file if you prefer. It results in slightly bigger
+filesize, but it's not too bad. It's essentially equivalent to dropping the
+=XZ_OPT= bits from the tar command above.
+
+** In Pictures
+
++ Import in progress
+#+CAPTION: Import in progress
+[[./img/import_progress.png]]
+
++ Import complete
+#+CAPTION: Import complete
+[[./img/import_complete.png]]
+
++ Import error (happens if the file being imported gets deleted before the import is complete)
+#+CAPTION: Import error (happens if the file being imported gets deleted before the import is complete)
+[[./img/import_error.png]]
+
++ Export progress (also shows the warning if an import/export is already in progress)
+#+CAPTION: Export progress (also shows the warning if an import/export is already in progress)
+[[./img/export_progress.png]]
+
+* Brand new users
+
+If you are a completely new user who hasn't used Yomichan before then you can
+import dictionaries one by one from the settings page, or you can download and
+import someone else's database.
+
+Here's a starter configuration intended for beginners:
+[[https://drive.google.com/file/d/1zLLsyB1MZ_HDdRLVceyjImqH-rQOWy2f/view?usp=sharing][yomibaba-dictionaries-beginners-2023-07-08-05-28-08.json]]
+
+Compressed version of the above to save on bandwidth:
+[[https://drive.google.com/file/d/1cGIiqaAQ_AaXaTjfhrINw-rJwz9li7nK/view?usp=sharing][yomibaba-dictionaries-beginners-2023-07-08-05-28-08.tar.xz]]
+
+You can run the following command from a POXIS shell to unzip the above (from
+the folder where you downloaded it):
+#+begin_src sh
+tar -xf yomibaba-dictionaries-beginners-2023-07-08-05-28-08.tar.xz
+#+end_src
+
+Or you can use [[https://www.7-zip.org/][7-zip]] if you are on windows and want a GUI, but you will have to
+unpack twice from the GUI (once to get the tar file and again to get the actual
+JSON).
+
+It comes with the following dictionaries installed:
++ [[https://github.com/aquafina-water-bottle/jmdict-english-yomichan][JMDICT extra with examples]] which is the most comprehensive JP-EN dictionary
++ =三省堂国語辞典　第七版= which is a JP-JP dictionary that is very
+  beginner-friendly with short definitions and I would recommend keeping it on
+  even as a beginner
++ =新和英= which is another JP-EN dictionary. You may want to keep this off if
+  you are a complete beginner just to have less clutter but a couple of
+  dictionaries don't hurt.
++ =デジタル大辞泉= which is another JP-JP dictionary that is very
+  comprehensive. You may want to keep this off if you are a complete beginner.
++ =JMnedict= which is a dictionary of names
++ =日本語文法辞典(全集)= aka =Dictionary of Japanense Grammar (DOJG)= is a
+  grammar dictionary based on
+  https://itazuraneko.neocities.org/grammar/dojgmain
++ =JLPT文法解説まとめ= aka =Nihongo Kyoshi= which is a grammar dictionary based
+  on https://nihongokyoshi-net.com/jlpt-grammars/. As this is a monolingual
+  dictionary with only Japanese definitions, you may want to keep this off as a
+  complete beginner too.
++ =KANJIDIC (English)= which is a kanji dictionary. I would caution against
+  worrying about Kanji too much as a beginner. Vocabulary (words, grammar
+  terms) are much more important.
++ =アクセント辞典= which is a pitch accent dictionary. You also needn't worry
+  _too much_ about pitch accent at the start, but it is useful to have an idea
+  that it is a thing. See https://morg.systems/0308ae14
++ =CC100= which is a frequency dictionary that ranks terms based on how
+  commonly used they are and I recommend using it to sort your results
+  (by selecting it from =General > Frequency sorting dictionary=)
++ =JPDB= which is also a frequency dictionary based on data from http://jpdb.io
+
+Check out https://github.com/MarvNC/yomichan-dictionaries for information on
+the above and much more.

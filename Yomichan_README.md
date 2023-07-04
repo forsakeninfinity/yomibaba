@@ -51,7 +51,7 @@ submitting issues on GitHub, try the *testing* version; otherwise, the *stable* 
     [![](img/chrome-web-store.png)](https://chrome.google.com/webstore/detail/yomichan/ogmnaimimemjmbakcfefmnahgdfhfami)
 
 *   **Mozilla Firefox**
-    ([stable](https://addons.mozilla.org/en-US/firefox/addon/yomichan/) or [testing](https://github.com/FooSoft/yomichan/releases)<sup>*</sup>) \
+    ([stable](https://addons.mozilla.org/en-US/firefox/addon/yomichan/) or [testing](https://github.com/forsakeninfinity/yomichan/releases)<sup>*</sup>) \
     [![](img/firefox-marketplace.png)](https://addons.mozilla.org/en-US/firefox/addon/yomichan/) \
     <sup>*</sup>Unlike Chrome, Firefox does not allow extensions meant for testing to be hosted in the marketplace.
     You will have to download a desired version and side-load it yourself. You only need to do this once and will get
