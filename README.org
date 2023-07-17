@@ -37,12 +37,12 @@ this new feature. Also present in this repository as [[file:Yomichan_README.md][
 
 ** Firefox
 
-Download [[https://github.com/forsakeninfinity/yomibaba/releases/download/22.11.3.3/yomibaba-firefox-signed-22.11.3.3.xpi][yomibaba-firefox-signed-22.11.3.3.xpi]] and drag it onto your Firefox window, or
+Download [[https://github.com/forsakeninfinity/yomibaba/releases/download/22.11.3.4/yomibaba-firefox-signed-22.11.3.4.xpi][yomibaba-firefox-signed-22.11.3.4.xpi]] and drag it onto your Firefox window, or
 just double click it.
 
 ** Chrome
 
-+ Download [[https://github.com/forsakeninfinity/yomibaba/releases/download/22.11.3.3/yomibaba-chrome.zip][yomibaba-chrome.zip]] and unzip it somewhere
++ Download [[https://github.com/forsakeninfinity/yomibaba/releases/download/22.11.3.4/yomibaba-chrome.zip][yomibaba-chrome.zip]] and unzip it somewhere
 + Go to chrome://extensions/ and turn on developer mode from the top right
 + Click =Load unpacked= and select the unzipped folder
 
@@ -55,6 +55,10 @@ export the database. Which means that we have no choice but to inject and run
 the code on top of the extension somehow. I have instructions on how to do that
 in this repository:
 https://github.com/forsakeninfinity/yomichan-data-exporter#steps-to-export-the-data
+
+If you are migrating from Yomichan like this, you should strongly consider also
+exporting your settings from the =Backup= section of Yomichan's Settings page
+and importing those in Yomibaba so that you get your exact setup back.
 
 ** Importing the dictionary database
 
