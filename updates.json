@@ -1,0 +1,16 @@
+{
+  "addons": {
+    "forsaken.infinity@gmail.com": {
+      "updates": [
+        {
+          "version": "22.11.3.3",
+          "update_link": "https://github.com/forsakeninfinity/yomibaba/releases/download/22.11.3.3/yomibaba-firefox-signed-22.11.3.3.xpi"
+        },
+        {
+          "version": "22.11.3.5",
+          "update_link": "https://github.com/forsakeninfinity/yomibaba/releases/download/22.11.3.5/yomibaba-firefox-signed-22.11.3.5.xpi"
+        }
+      ]
+    }
+  }
+}
