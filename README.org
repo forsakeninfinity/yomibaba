@@ -37,12 +37,12 @@ this new feature. Also present in this repository as [[file:Yomichan_README.md][
 
 ** Firefox
 
-Download [[https://github.com/forsakeninfinity/yomibaba/releases/download/22.11.3.4/yomibaba-firefox-signed-22.11.3.4.xpi][yomibaba-firefox-signed-22.11.3.4.xpi]] and drag it onto your Firefox window, or
+Download [[https://github.com/forsakeninfinity/yomibaba/releases/download/22.11.3.5/yomibaba-firefox-signed-22.11.3.5.xpi][yomibaba-firefox-signed-22.11.3.5.xpi]] and drag it onto your Firefox window, or
 just double click it.
 
 ** Chrome
 
-+ Download [[https://github.com/forsakeninfinity/yomibaba/releases/download/22.11.3.4/yomibaba-chrome.zip][yomibaba-chrome.zip]] and unzip it somewhere
++ Download [[https://github.com/forsakeninfinity/yomibaba/releases/download/22.11.3.5/yomibaba-chrome.zip][yomibaba-chrome.zip]] and unzip it somewhere
 + Go to chrome://extensions/ and turn on developer mode from the top right
 + Click =Load unpacked= and select the unzipped folder
 

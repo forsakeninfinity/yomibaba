@@ -680,14 +680,14 @@ select.short-height {
     padding-right: var(--padding);
 }
 .settings-item-progress-report {
-    background-color: #000;
     display: none;
-    color: #00FFFF;
+    font-weight: bold;
+    color: #4169e1;
 }
 .settings-item-error-report {
-    background-color: #000;
     display: none;
-    color: #EE4B2B;
+    font-weight: bold;
+    color: #8b0000;
 }
 
 

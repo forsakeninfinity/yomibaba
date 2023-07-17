@@ -429,12 +429,12 @@ class BackupController {
         errorMessageContainer.style.display = 'block';
         errorMessageContainer.textContent = message;
 
-        if (isWarning) { // Hide after 3 seconds (3000 milliseconds)
-            errorMessageContainer.style.color = '#FFFF00';
+        if (isWarning) { // Hide after 5 seconds (5000 milliseconds)
+            errorMessageContainer.style.color = '#FFC40C';
             setTimeout(function _hideWarningMessage() {
                 errorMessageContainer.style.display = 'none';
-                errorMessageContainer.style.color = '#EE4B2B';
-            }, 3000);
+                errorMessageContainer.style.color = '#8B0000';
+            }, 5000);
         }
     }
 
@@ -491,12 +491,12 @@ class BackupController {
         console.log(`Progress: ${completedRows} of ${totalRows} rows completed`);
         const messageContainer = document.querySelector('#db-ops-progress-report');
         messageContainer.style.display = 'block';
-        messageContainer.style.color = '#00FFFF';
+        messageContainer.style.color = '#4169e1';
         messageContainer.textContent = `Import Progress: ${completedRows} of ${totalRows} rows completed`;
 
         if (done) {
             console.log('Done importing.');
-            messageContainer.style.color = '#99FF99';
+            messageContainer.style.color = '#006633';
             messageContainer.textContent = 'Done importing. You will need to re-enable the dictionaries and refresh afterward. If you run into issues, please restart the browser. If it continues to fail, reinstall Yomibaba and import dictionaries one-by-one.';
         }
     }

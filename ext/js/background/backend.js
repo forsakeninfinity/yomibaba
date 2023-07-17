@@ -1122,8 +1122,8 @@ class Backend {
 
     async _textParseScanning(text, scanLength, optionsContext) {
         const jp = this._japaneseUtil;
+        const mode = 'simple';
         const options = this._getProfileOptions(optionsContext);
-        const {general: {resultOutputMode: mode}} = options;
         const details = {matchType: 'exact', deinflect: true};
         const findTermsOptions = this._getTranslatorFindTermsOptions(mode, details, options);
         const results = [];
