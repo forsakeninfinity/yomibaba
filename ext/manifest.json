@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Yomibaba",
-    "version": "22.11.3.5",
+    "version": "22.11.3.6",
     "description": "Japanese dictionary with Anki integration",
     "author": "ForsakenInfinity",
     "icons": {

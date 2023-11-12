@@ -37,18 +37,18 @@ this new feature. Also present in this repository as [[file:Yomichan_README.md][
 
 ** Firefox
 
-Download [[https://github.com/forsakeninfinity/yomibaba/releases/download/22.11.3.5/yomibaba-firefox-signed-22.11.3.5.xpi][yomibaba-firefox-signed-22.11.3.5.xpi]] and drag it onto your Firefox window, or
+Download [[https://github.com/forsakeninfinity/yomibaba/releases/download/22.11.3.6/yomibaba-firefox-signed-22.11.3.6.xpi][yomibaba-firefox-signed-22.11.3.6.xpi]] and drag it onto your Firefox window, or
 just double click it.
 
 ** Chromium based browsers on a computer
 
-+ Download [[https://github.com/forsakeninfinity/yomibaba/releases/download/22.11.3.5/yomibaba-chrome.zip][yomibaba-chrome.zip]] and unzip it somewhere
++ Download [[https://github.com/forsakeninfinity/yomibaba/releases/download/22.11.3.6/yomibaba-chrome.zip][yomibaba-chrome.zip]] and unzip it somewhere
 + Go to =chrome://extensions/= and turn on developer mode from the top right
 + Click =Load unpacked= and select the unzipped folder
 
 ** Chromium based browsers on mobile (i.e., Kiwi)
 + If you are on a mobile device and using a Chromium based browser like Kiwi,
-  install using the [[https://github.com/forsakeninfinity/yomibaba/releases/download/22.11.3.5/yomibaba-chrome.crx][yomibaba-chrome.crx]] file instead. Loading unpacked
+  install using the [[https://github.com/forsakeninfinity/yomibaba/releases/download/22.11.3.6/yomibaba-chrome.crx][yomibaba-chrome.crx]] file instead. Loading unpacked
   extensions with a zip apparently causes the Android cache cleanup to reap
   them occasionally. This hasn't been tested with any other mobile browser fwiw
   so your mileage may vary.
