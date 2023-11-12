@@ -9,6 +9,10 @@
         {
           "version": "22.11.3.5",
           "update_link": "https://github.com/forsakeninfinity/yomibaba/releases/download/22.11.3.5/yomibaba-firefox-signed-22.11.3.5.xpi"
+        },
+        {
+          "version": "22.11.3.6",
+          "update_link": "https://github.com/forsakeninfinity/yomibaba/releases/download/22.11.3.6/yomibaba-firefox-signed-22.11.3.6.xpi"
         }
       ]
     }
